@@ -15,7 +15,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 // Handle context menu clicks
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId === 'clipit-save-page') {
+  if (info.menuItemId === 'clipit-save-page' && tab) {
     clipCurrentPage(tab);
   }
 });
@@ -68,7 +68,7 @@ async function clipCurrentPage(tab: chrome.tabs.Tab) {
       func: extractPageContent
     });
     
-    if (results && results[0]) {
+    if (results && results[0] && results[0].result) {
       const pageData = results[0].result;
       const clip = {
         id: generateId(),
@@ -118,10 +118,6 @@ function extractPageContent() {
 }
 
 // Utility functions
-function generateId(): string {
-  return 'clip_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-}
-
 function generateTags(content: string): string[] {
   // Basic tag generation based on keywords
   const keywords = [

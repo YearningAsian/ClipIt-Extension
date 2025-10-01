@@ -69,7 +69,7 @@ function showClipNotification() {
 
 // Handle text selection for quick clipping
 function handleTextSelection() {
-  let selectionTimeout: NodeJS.Timeout;
+  let selectionTimeout: number;
   
   document.addEventListener('mouseup', () => {
     clearTimeout(selectionTimeout);
@@ -85,7 +85,7 @@ function handleTextSelection() {
   
   document.addEventListener('keyup', () => {
     clearTimeout(selectionTimeout);
-    selectionTimeout = setTimeout(() => {
+    selectionTimeout = window.setTimeout(() => {
       const selection = window.getSelection();
       if (selection && selection.toString().trim().length > 10) {
         showSelectionClipButton(selection);
