@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClipIt</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="logo">
+        <img src="icons/icon32.png" alt="ClipIt" />
+        <h1>ClipIt</h1>
+      </div>
+    </header>
+    
+    <main class="popup-main">
+      <div class="current-page">
+        <h2 id="page-title">Loading...</h2>
+        <p id="page-url">...</p>
+      </div>
+      
+      <div class="actions">
+        <button id="clip-btn" class="primary-btn">
+          <span class="icon">📎</span>
+          Clip This Page
+        </button>
+        
+        <button id="quick-note-btn" class="secondary-btn">
+          <span class="icon">📝</span>
+          Quick Note
+        </button>
+      </div>
+      
+      <div class="quick-note-section" id="quick-note-section" style="display: none;">
+        <textarea id="quick-note-text" placeholder="Add a quick note about this page..."></textarea>
+        <div class="note-actions">
+          <button id="save-note-btn" class="small-btn">Save</button>
+          <button id="cancel-note-btn" class="small-btn secondary">Cancel</button>
+        </div>
+      </div>
+      
+      <div class="recent-clips">
+        <h3>Recent Clips</h3>
+        <div id="clips-list" class="clips-list">
+          <div class="loading">Loading clips...</div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="popup-footer">
+      <button id="dashboard-btn" class="text-btn">
+        <span class="icon">🚀</span>
+        Open Dashboard
+      </button>
+      <button id="settings-btn" class="text-btn">
+        <span class="icon">⚙️</span>
+        Settings
+      </button>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* ClipIt Content Script Styles */
+
+.clipit-overlay-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  z-index: 10000;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+.clipit-overlay-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.clipit-overlay-btn.clipit-hidden {
+  opacity: 0;
+  transform: scale(0.8) translateX(20px);
+  pointer-events: none;
+}
+
+.clipit-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10002;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.3s ease;
+}
+
+.clipit-notification.clipit-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.clipit-notification-content {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.clipit-notification-icon {
+  font-size: 16px;
+}
+
+.clipit-selection-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.clipit-selection-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+/* Prevent conflicts with page styles */
+.clipit-overlay-btn,
+.clipit-notification,
+.clipit-selection-btn {
+  all: unset;
+}
+
+.clipit-overlay-btn {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: 50px !important;
+  height: 50px !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: white !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+  z-index: 10000 !important;
+  transition: all 0.3s ease !important;
+  opacity: 0.9 !important;
+  transform: scale(1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
